@@ -1,0 +1,46 @@
+name: Sincronizar HTML para README e PDF
+
+on:
+  push:
+    paths:
+      - 'index.html'  # Altere aqui se o seu arquivo tiver outro nome (ex: manual.html)
+  workflow_dispatch:
+
+jobs:
+  convert-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar Dependências (Pandoc e WeasyPrint)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc python3-pip
+          pip3 install weasyprint
+
+      - name: Converter HTML para Markdown (README.md)
+        run: |
+          # O Pandoc converte a estrutura semântica para Markdown GFM (GitHub Flavored)
+          # Nota: O Markdown nativamente não suporta estilos CSS complexos.
+          pandoc curriculum.html -f html -t gfm -o README.md
+
+      - name: Converter HTML para PDF
+        run: |
+          # O WeasyPrint é usado aqui para garantir que a formatação CSS seja levada ao PDF
+          weasyprint index.html documento.pdf
+
+      - name: Commit e Push das alterações
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Adiciona os arquivos gerados
+          git add README.md documento.pdf
+          
+          # Commita apenas se houver mudanças reais para evitar erros no workflow
+          git commit -m "docs: atualização automática do README e PDF a partir do HTML" || echo "Sem mudanças para salvar"
+          git push
