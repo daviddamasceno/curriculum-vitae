@@ -3,7 +3,7 @@ name: Sincronizar HTML para README e PDF
 on:
   push:
     paths:
-      - 'index.html'  # Altere aqui se o seu arquivo tiver outro nome (ex: manual.html)
+      - 'curriculum.html'  # Altere aqui se o seu arquivo tiver outro nome (ex: manual.html)
   workflow_dispatch:
 
 jobs:
