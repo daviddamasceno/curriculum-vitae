@@ -34,11 +34,12 @@
     }
     .job-item { margin-bottom: 14px; page-break-inside: avoid; }
     .job-header { display: table; width: 100%; margin-bottom: 2px; }
-    .company { display: table-cell; font-weight: bold; text-align: left; font-size: 11pt; color: #222; }
+    .company { display: table-cell; text-align: left; font-size: 11pt; color: #555; }
     .date { display: table-cell; text-align: right; font-weight: bold; font-size: 10pt; color: #444; }
-    .job-title { font-style: italic; color: #555; margin-bottom: 6px; font-size: 10.5pt;}
+    .job-title { color: #222; font-weight: bold; margin-bottom: 6px; font-size: 10.5pt;}
     ul { margin-top: 0; padding-left: 20px; margin-bottom: 0; }
     li { margin-bottom: 5px; text-align: justify; color: #444; }
+    li::marker { color: #4A789A; }
     .skills-item { margin-bottom: 6px; color: #444; }
     .skills-category { font-weight: bold; color: #222; }
     p { margin-top: 0; margin-bottom: 10px; text-align: justify; color: #444; }
@@ -53,6 +54,15 @@
 
     <div class="section-title">Resumo Profissional</div>
     <p>Especialista em Infraestrutura e Cloud com sólida experiência, consolidando uma transição bem-sucedida de ambientes On-premise para ecossistemas Cloud Native (AWS/GCP). Expertise na implementação de cultura DevOps, automação de infraestrutura (IaC), orquestração de containers com Kubernetes e estruturação de stacks complexas de Observabilidade. Foco em alta disponibilidade, escalabilidade e otimização de custos operacionais.</p>
+
+    <div class="section-title">Competências Técnicas (Hard Skills)</div>
+    <div class="skills-item"><span class="skills-category">Cloud Computing:</span> AWS (EKS, RDS, EC2, S3, Lambda, API Gateway, WAF) e GCP (GKE, Cloud SQL, IAM).</div>
+    <div class="skills-item"><span class="skills-category">Infraestrutura como Código (IaC):</span> Terraform, Ansible e CloudFormation.</div>
+    <div class="skills-item"><span class="skills-category">Containers & Orquestração:</span> Docker, Kubernetes (EKS/GKE), Helm e ArgoCD (GitOps).</div>
+    <div class="skills-item"><span class="skills-category">CI/CD & Automação:</span> Jenkins, GitLab CI, GitHub Actions e Bitbucket Pipelines; Automação de deploys.</div>
+    <div class="skills-item"><span class="skills-category">Observabilidade & Monitoramento:</span> Stack ELK (Elasticsearch, Logstash, Kibana), Grafana, Prometheus, Jaeger (Tracing), OpenTelemetry (Otel), Zabbix e CloudWatch.</div>
+    <div class="skills-item"><span class="skills-category">Redes e Segurança:</span> VPN Site-to-Site, Direct Connect, VPC, WAF (Cloudflare/GoCache), Active Directory e Gestão de Acessos (IAM).</div>
+    <div class="skills-item"><span class="skills-category">Sistemas Operacionais:</span> Administração avançada de Linux e Windows Server.</div>
 
     <div class="section-title">Experiência Profissional</div>
 
@@ -77,7 +87,7 @@
     <div class="job-item">
         <div class="job-header">
             <div class="company">Grupo Servnac</div>
-            <div class="date">Ago de 2019 – jun de 2023</div>
+            <div class="date">Ago de 2019 – Jun de 2023</div>
         </div>
         <div class="job-title">TI Support Specialist (Generalist)</div>
         <ul>
@@ -138,15 +148,6 @@
         </div>
         <div class="job-title">Tecnólogo em DevOps</div>
     </div>
-
-    <div class="section-title">Competências Técnicas (Hard Skills)</div>
-    <div class="skills-item"><span class="skills-category">Cloud Computing:</span> AWS (EKS, RDS, EC2, S3, Lambda, API Gateway, WAF) e GCP (GKE, Cloud SQL, IAM).</div>
-    <div class="skills-item"><span class="skills-category">Infraestrutura como Código (IaC):</span> Terraform, Ansible e CloudFormation.</div>
-    <div class="skills-item"><span class="skills-category">Containers & Orquestração:</span> Docker, Kubernetes (EKS/GKE), Helm e ArgoCD (GitOps).</div>
-    <div class="skills-item"><span class="skills-category">CI/CD & Automação:</span> Jenkins, GitLab CI e GitHub Actions; automação de deploys e testes com scripts em Python e Bash.</div>
-    <div class="skills-item"><span class="skills-category">Observabilidade & Monitoramento:</span> Stack ELK (Elasticsearch, Logstash, Kibana), Grafana, Prometheus, Jaeger (Tracing), OpenTelemetry (Otel), Zabbix e CloudWatch.</div>
-    <div class="skills-item"><span class="skills-category">Redes e Segurança:</span> VPN Site-to-Site, Direct Connect, VPC, WAF (Cloudflare/GoCache), Active Directory e Gestão de Acessos (IAM).</div>
-    <div class="skills-item"><span class="skills-category">Sistemas Operacionais:</span> Administração avançada de Linux e Windows Server.</div>
 
 </body>
 </html>
