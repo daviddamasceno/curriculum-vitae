@@ -31,7 +31,7 @@ jobs:
       - name: Converter HTML para PDF
         run: |
           # O WeasyPrint é usado aqui para garantir que a formatação CSS seja levada ao PDF
-          weasyprint index.html documento.pdf
+          weasyprint curriculum.html curriculum.pdf
 
       - name: Commit e Push das alterações
         run: |
@@ -39,7 +39,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Adiciona os arquivos gerados
-          git add README.md documento.pdf
+          git add README.md curriculum.pdf
           
           # Commita apenas se houver mudanças reais para evitar erros no workflow
           git commit -m "docs: atualização automática do README e PDF a partir do HTML" || echo "Sem mudanças para salvar"
