@@ -16,17 +16,11 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Instalar Dependências (Pandoc e WeasyPrint)
+      - name: Instalar Dependências (WeasyPrint)
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc python3-pip
+          sudo apt-get install -y python3-pip
           pip3 install weasyprint
-
-      - name: Converter HTML para Markdown (README.md)
-        run: |
-          # O Pandoc converte a estrutura semântica para Markdown GFM (GitHub Flavored)
-          # Nota: O Markdown nativamente não suporta estilos CSS complexos.
-          pandoc curriculum.html -f html -t gfm -o README.md
 
       - name: Converter HTML para PDF
         run: |
@@ -39,8 +33,8 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Adiciona os arquivos gerados
-          git add README.md curriculum.pdf
+          git add curriculum.pdf
           
           # Commita apenas se houver mudanças reais para evitar erros no workflow
-          git commit -m "docs: atualização automática do README e PDF a partir do HTML" || echo "Sem mudanças para salvar"
+          git commit -m "docs: atualização automática do PDF a partir do HTML" || echo "Sem mudanças para salvar"
           git push
